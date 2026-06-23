@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FileText } from 'lucide-react';
+import { FileText, LogIn } from 'lucide-react';
 
 const Header = () => {
   return (
@@ -12,7 +12,11 @@ const Header = () => {
           </div>
           <span className="text-gradient" style={styles.logoText}>AI Resume Generator</span>
         </Link>
-        <nav>
+        <nav style={styles.nav}>
+          <Link to="/login" className="btn btn-outline" style={styles.loginBtn}>
+            <LogIn size={18} />
+            Login
+          </Link>
           <Link to="/builder" className="btn btn-primary" style={styles.buildBtn}>
             Build Resume
           </Link>
@@ -55,6 +59,16 @@ const styles = {
     fontSize: '1.25rem',
     fontWeight: '700',
     letterSpacing: '-0.5px',
+  },
+  nav: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '1rem',
+  },
+  loginBtn: {
+    padding: '0.5rem 1rem',
+    fontSize: '0.95rem',
+    borderRadius: 'var(--border-radius-sm)',
   },
   buildBtn: {
     padding: '0.5rem 1.25rem',

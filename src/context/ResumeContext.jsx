@@ -75,7 +75,13 @@ export const ResumeProvider = ({ children }) => {
         body: JSON.stringify(resumeData),
       });
 
-      const data = await response.json();
+      const responseText = await response.text();
+      let data;
+      try {
+        data = responseText ? JSON.parse(responseText) : {};
+      } catch (err) {
+        throw new Error(`Server returned invalid JSON. Status: ${response.status}. Response: ${responseText.substring(0, 100)}...`);
+      }
 
       if (!response.ok) {
         throw new Error(data.message || 'Failed to submit resume');

@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import LandingPage from './pages/LandingPage';
 import BuilderPage from './pages/BuilderPage';
+import LoginPage from './pages/LoginPage';
 import './App.css';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<LandingPage />} />
         <Route path="builder" element={<BuilderPage />} />
+        <Route path="login" element={<LoginPage />} />
       </Route>
     </Routes>
   );
