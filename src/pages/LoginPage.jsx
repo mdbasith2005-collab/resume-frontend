@@ -46,7 +46,6 @@ const LoginPage = () => {
                   style={styles.inputWithIcon}
                   value={formData.email}
                   onChange={handleChange}
-                  required
                 />
               </div>
             </div>
@@ -66,7 +65,6 @@ const LoginPage = () => {
                   style={styles.inputWithIcon}
                   value={formData.password}
                   onChange={handleChange}
-                  required
                 />
               </div>
             </div>
