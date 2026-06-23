@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Lock, ArrowRight } from 'lucide-react';
 
 const LoginPage = () => {
@@ -7,6 +7,8 @@ const LoginPage = () => {
     email: '',
     password: ''
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -18,7 +20,8 @@ const LoginPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Login attempt:', formData);
-    // Add logic here
+    // Simulating a successful login redirect
+    navigate('/home');
   };
 
   return (
