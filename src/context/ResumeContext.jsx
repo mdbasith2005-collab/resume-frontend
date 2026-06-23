@@ -84,7 +84,8 @@ export const ResumeProvider = ({ children }) => {
       }
 
       if (!response.ok) {
-        throw new Error(data.message || 'Failed to submit resume');
+        const errorMsg = data.error?.message || data.message || `Server returned ${response.status}`;
+        throw new Error(errorMsg);
       }
 
       return { success: true, data };
