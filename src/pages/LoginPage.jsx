@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Lock, ArrowRight, Github } from 'lucide-react';
+import { Mail, Lock, ArrowRight } from 'lucide-react';
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -79,7 +79,6 @@ const LoginPage = () => {
           
           <div style={styles.socialAuth}>
             <button type="button" className="btn btn-secondary" style={styles.socialBtn}>
-              <Github size={20} />
               GitHub
             </button>
             {/* Can add Google etc later */}
